@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -524,7 +524,7 @@ function descargarExcel(){
     return row;
   });
   function esc(val){var s=String(val===null||val===undefined?'':val);return(s.includes(';')||s.includes('"')||s.includes('\n'))?'"'+s.replace(/"/g,'""')+'"':s;}
-  var csv='﻿'+cols.map(esc).join(';')+'\n';
+  var csv='﻿'+'sep=;\n'+cols.map(esc).join(';')+'\n';
   filas.forEach(function(r){csv+=r.map(esc).join(';')+'\n';});
   var blob=new Blob([csv],{type:'text/csv;charset=utf-8'});
   var url=URL.createObjectURL(blob);
